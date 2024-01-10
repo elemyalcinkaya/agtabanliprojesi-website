@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uzay Bilgileri</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        body {
+            color: #e5dddd;
+            margin: 20px;
+            background-color: rgb(0, 0, 0); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+    
+        h1 {
+            color: #e4ddb7;
+            font-family: Didot, serif;
+            margin-top: 15px;
+            
+        }
+        h2 {
+            color: #e4ddb7;
+            font-family: Didot, serif;
+            font-size: xx-large;
+            margin-top: 10px;
+            
+        }
+
+        p {
+            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            
+            
+            margin-right: 20px;
+            margin-left: 30px;
+            margin-top: 25px;
+            flex: 1; 
+        }
+
+        .top-header {
+            position: absolute;
+            top: 0;
+            left: 5px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #000; 
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: #131418;
+            padding: 7px;
+            box-sizing: border-box;
+            margin-top: -15px;
+            position: relative;
+            top: auto; 
+            z-index: 100;
+        }
+        
+        
+        .basliklar {
+            width: 46%; 
+            margin: 0 auto; /* başlıkları ortala */
+            font-size: larger;
+            color: #131418;
+            margin-top: 10px;
+            font-family: Didot, serif;
+        }
+        
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul#main li {
+            float: left;
+            position: relative;
+            width: 120px;
+            margin-right: 30px;
+        }
+
+        ul#main li ul {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            top: 40px;
+            animation: slideDown 0.5s forwards;
+        }
+
+        @keyframes slideDown {
+            to {
+                display: block;
+                opacity: 1;
+            }
+        }
+
+        ul#main li:hover ul {
+            display: block;
+        }
+
+        ul li a {
+            display: block;
+            width: 90px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #101112;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 2px;
+            border: #14092e;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; 
+        }
+
+        .slider {
+            overflow: hidden;
+            width: 55%;
+            margin-top: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border-radius: 8px; 
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+        
+        #uzay-araci-secim {
+            width: 200px; 
+            height: 40px; 
+            font-size: 16px; 
+            color: #fff; 
+            background-color: #1e3150; 
+            border: 2px solid #39506b; 
+            border-radius: 6px; 
+            padding: 5px; 
+            margin-right: 10px; 
+            margin-top: 20px;
+        }
+
+        button {
+            height: 40px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            background-color: #bbb824; 
+            color: #fff; 
+            border: none; 
+            border-radius: 6px; 
+            padding: 5px 15px; 
+            margin-right: 10px; 
+        }
+
+       
+        #uzay-araci-bilgi {
+            margin-top: 20px; 
+            text-align: center;
+            
+        }
+
+        
+
+        .container2 {
+            width: 90%;
+            height: 300px;
+            background-color: #0e0118;
+            border-radius: 6px;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: 40px;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #e4ddb7; 
+            }
+            50% {
+                color: #bb7cb8; 
+            }
+            100% {
+                color: #e4ddb7; 
+            }
+        }
+
+        #uzaklik-sonuc {
+            font-size: 32px; 
+            margin-top: 10px;
+            font-family: Didot, serif;
+            animation: colorChange 4s infinite; 
+        }
+
+        #uzay-araci-secim:hover,
+        button:hover {
+            background-color: #9cb7e7; 
+            
+        }
+
+        #uzay-araci-secim:focus,
+        button:focus {
+            outline: none; 
+            border: 2px solid #d5d271; 
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="basliklar">
+            <a href="mywebsite.html" style="position: absolute; left: 310px; top: 10px;">
+                <img src="c:/Users/ELEM/Downloads/70b0972e7a9558baa4416c61b04da9.webp" alt="Görsel Başlık" style="width: 7%; max-width: 7%;">
+            </a>
+            
+            <ul id="main">
+               
+                <li><a href="#">UZAY▿</a>
+                    <ul>
+                        <li><a href="hakkındauzay.html">-Hakkında</a></li>
+                        <li><a href="haberleruzay.html">-Haberler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">YAZILIM▿</a>
+                    <ul>
+                        <li><a href="yazılımhakkında.html">-Nedir?</a></li>
+                        <li><a href="haberleryapayzeka.html">Gelişmeler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">YAPAY&nbsp;ZEKA▿</a>
+                    <ul>
+                        <li><a href="hakkındayapayzeka.html">-Hakkında</a></li>
+                        <li><a href="haberleryapayzeka.html">-Yenilikler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEDİUM▿</a>
+                    <ul>
+                        <li><a href="mediumhakkında.html">-Nedir?</a></li>
+                        <li><a href="yazılarımmedium.html">-Yazılarım</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="slider">
+        <button class="arrow arrow-left" onclick="prevSlide()">‹</button>
+        <div class="slider-wrapper">
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/history-in-hd-e5eDHbmHprg-unsplash.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/jeremy-thomas-E0AHdsENmDg-unsplash.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/guillermo-ferla-Oze6U2m1oYU-unsplash.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/0_BGsRJGySqxSSX2qY.gif" alt="Slide 3"></div>
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/anirudh-Xu4Pz7GI9JY-unsplash.jpg" alt="Slide 3"></div>
+        </div>
+        <button class="arrow arrow-right" onclick="nextSlide()">›</button>
+    </div>
+    
+    <h1><i>Uzay Hakkında Bilgiler</i></h1>
+
+    <p>
+        Uzay, genişleyen, sınırsız görünür boşluktur. Yıldızlar, galaksiler, gezegenler,
+        gökadalar ve diğer gök cisimlerini içerir. Uzay, zamanla genişleyen bir evrende
+        yer alır ve birçok gizemi içinde barındırır.
+    </p>
+    <p>
+        Evrenin Büyüklüğü:
+        Evren, sonsuz büyüklükte bir uzaydır. Milyarlarca galaksi, her birinde milyarlarca yıldız ve bu yıldızların etrafında dönen gezegenleri içerir. Güneş Sistemi, sadece bu galaksinin küçük bir bölümüdür.
+        <br>
+        <br>
+        Siyah Delikler:
+        Siyah delikler, uzayda en ilginç ve gizemli nesnelerden biridir. Bunlar, çok büyük kütleli yıldızların çökmesi sonucu ortaya çıkan ve çevresine ışık dahil hiçbir şeyin kaçamadığı bölgelerdir.
+        <br>
+        <br>
+        Uzay Zamanı:
+        Uzay ve zaman, birbirine bağlı bir kavramdır. Einstein'ın genel görelilik teorisine göre, kütleçekimi bir cismin zaman ve uzayı eğmesine neden olur. Bu, zamanın ve uzayın, bir cismin kütleçekimi etkisi altında nasıl eğildiğini açıklar.
+        <br>
+        <br>
+        Uzay Araştırmaları:
+        Uzay araştırmaları, insanlığın uzaya olan merakını ve keşfetme isteğini tatmin etmek için yürütülen bir dizi görevi içerir. Apollo Ay programı, Mars rover'ları gibi projeler, uzaydaki bilinmeyenlere ulaşma çabalarının bir parçasıdır.
+        <br>
+        <br>
+        Uzayın Soğukluğu:
+        Uzay, çok düşük sıcaklıklara sahiptir, hatta sıfırın altında 270 derece civarında bir sıcaklıkta bulunur. Bu nedenle, uzayda hayatta kalmak için özel donanıma ve giysilere ihtiyaç vardır.
+    </p>
+
+    <div id="uzay-araci-bilgi" class="container2">
+        <h2>Uzay Aracı Bilgi Kutusu</h2>
+        
+        <p>Uzay aracı seçin ve size olan uzaklığını öğrenin:</p>
+    
+        <select id="uzay-araci-secim">
+            <option value="James-Webb">James Webb</option>
+            <option value="Ingenuity">Ingenuity</option>
+            <option value="Perseverance">Perseverance</option>
+            <option value="Hubble">Hubble</option>
+            <option value="ISS">ISS</option>
+        </select>
+    
+        <button onclick="uzayAraciUzaklik()">Bilgi Al</button>
+    
+        <p id="uzaklik-sonuc"></p>
+    </div>
+    
+
+
+    <script>
+        let currentSlide = 0;
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % 5; // 5: toplam slayt sayısı
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + 5) % 5; // 5: toplam slayt sayısı
+            updateSlider();
+        }
+
+
+        function updateSlider() {
+            const sliderWrapper = document.querySelector('.slider-wrapper');
+            const slideWidth = document.querySelector('.slide').offsetWidth;
+            sliderWrapper.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+        }
+        function uzayAraciUzaklik() {
+        const uzayAraciSecim = document.getElementById('uzay-araci-secim');
+        const uzaklikSonuc = document.getElementById('uzaklik-sonuc');
+
+        const uzayAraci = uzayAraciSecim.value;
+
+        // Uzaklık bilgilerini  güncelle
+        let uzaklik;
+        switch (uzayAraci) {
+            case 'James-Webb':
+                uzaklik = '1.5 milyon km uzaklıkta ';
+                break;
+            case 'Ingenuity':
+                uzaklik = '225 milyon km uzaklıkta Mars yüzeyinde';
+                break;
+            case 'Perseverance':
+                uzaklik = '225 milyon km uzaklıkta Mars yüzeyinde';
+                break;
+            case 'Hubble':
+                uzaklik = 'yaklaşık 547 km uzaklıkta';
+                break;
+            case 'ISS':
+                uzaklik = 'yaklaşık 420 km uzaklıkta';
+                break;
+            default:
+                uzaklik = 'Bilinmeyen uzaklık';
+        }
+
+        uzaklikSonuc.textContent = ` ${uzayAraci} uzay aracı şu anda ${uzaklik}  sizi izliyor!`;
+    }
+    
+
+        
+    </script>
+</body>
+</html>

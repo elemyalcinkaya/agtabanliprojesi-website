@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yazılım Bilgileri</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        body {
+            color: #e5dddd;
+            margin: 20px;
+            background-color: rgb(0, 0, 0); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #e4ddb7;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        p {
+            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+
+        .container {
+            width: 100%;
+            background-color: #131418;
+            padding: 7px;
+            box-sizing: border-box;
+            margin-top: -15px;
+            position: relative;
+            top: auto;
+            z-index: 100;
+        }
+
+        .basliklar {
+            width: 46%; 
+            margin: 0 auto; 
+            font-size: larger;
+            color: #131418;
+            margin-top: 10px;
+            font-family: Didot, serif;
+        }
+        .top-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #000; 
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul#main li {
+            float: left;
+            position: relative;
+            width: 120px;
+            margin-right: 30px;
+        }
+
+        ul#main li ul {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            top: 40px;
+            animation: slideDown 0.5s forwards;
+        }
+
+        @keyframes slideDown {
+            to {
+                display: block;
+                opacity: 1;
+            }
+        }
+
+        ul#main li:hover ul {
+            display: block;
+        }
+
+        ul li a {
+            display: block;
+            width: 90px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #101112;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 2px;
+            border: #14092e;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .slider {
+            overflow: hidden;
+            width: 70%;
+            margin-top: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border-radius: 8px; 
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="basliklar">
+            <a href="mywebsite.html" style="position: absolute; left: 310px; top: 10px;">
+                <img src="c:/Users/ELEM/Downloads/70b0972e7a9558baa4416c61b04da9.webp" alt="Görsel Başlık" style="width: 7%; max-width: 7%;">
+            </a>
+            
+            <ul id="main">
+                <li><a href="#">UZAY▿</a>
+                    <ul>
+                        <li><a href="hakkındauzay.html">-Hakkında</a></li>
+                        <li><a href="haberleruzay.html">-Haberler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">YAZILIM▿</a>
+                    <ul>
+                        <li><a href="yazılımhakkında.html">-Nedir?</a></li>
+                        <li><a href="haberleryazılım.html">Gelişmeler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">YAPAY&nbsp;ZEKA▿</a>
+                    <ul>
+                        <li><a href="hakkındayapayzeka.html">-Hakkında</a></li>
+                        <li><a href="haberleryapayzeka.html">-Yenilikler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEDİUM▿</a>
+                    <ul>
+                        <li><a href="mediumhakkında.html">-Nedir?</a></li>
+                        <li><a href="yazılarımmedium.html">-Yazılarım</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slider">
+        <button class="arrow arrow-left" onclick="prevSlide()">‹</button>
+        <div class="slider-wrapper">
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/jametlene-reskp-3WW_8chGubQ-unsplash.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/joshua-reddekopp-SyYmXSDnJ54-unsplash.jpg" alt="Slide 3"></div>
+            <div class="slide"><img src="c:/Users/ELEM/Downloads/clint-patterson-dYEuFB8KQJk-unsplash.jpg" alt="Slide 3"></div>
+        </div>
+        <button class="arrow arrow-right" onclick="nextSlide()">›</button>
+    </div>
+    
+    <h1><i>Yazılım Hakkında Bilgiler</i></h1>
+
+    <p>
+        Yazılım, bilgisayarlar ve diğer akıllı cihazlar gibi donanımların çalışmasını sağlayan talimatları içeren bir programlama dilinde yazılmış bir dizi komuttur. Yazılım, bir bilgisayarın işlevselliğini belirler ve çeşitli görevleri yerine getirmek için kullanılır. Yazılım genellikle iki ana kategoriye ayrılır.
+    </p>
+    <p>
+    
+        <span style="color: #e4ddb7;">1-Sistem Yazılımı (System Software):</span> Bu tür yazılım, bilgisayar donanımı ile iletişim kurarak temel bilgisayar işlevlerini yönetir. İşletim sistemleri, sürücü yazılımları ve sistem hizmet programları gibi örnekler bulunmaktadır. İşletim sistemleri, bilgisayarın kaynaklarını yönetir, kullanıcı arayüzü sağlar ve uygulama yazılımları ile donanım arasında bir köprü görevi görür.
+<br>
+<br>
+<span style="color: #e4ddb7;">2-Uygulama Yazılımı (Application Software):</span> Bu tür yazılım, belirli görevleri gerçekleştirmek için kullanılır. Ofis uygulamaları, oyunlar, grafik tasarım yazılımları, veritabanı yönetimi sistemleri gibi çeşitli uygulamalar buna örnektir. Uygulama yazılımı, genellikle kullanıcının ihtiyaçlarına ve endüstri gereksinimlerine göre özelleştirilebilir.
+<br> <br> Yazılım, modern dünyada birçok sektörde kritik bir rol oynar. İş süreçlerini optimize etmek, veri analizi yapmak, iletişimi kolaylaştırmak ve birçok endüstriye inovasyon getirmek gibi çeşitli avantajlar sağlar.
+
+Bu, yazılımın genel bir bakışıdır. Yazılım, bilgisayarlar ve teknolojiyle ilgilenen birçok alanda merkezi bir konuma sahiptir.
+    </p>
+
+    
+    
+
+    <script>
+        let currentSlide = 0;
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % 5; 
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + 5) % 5; // 5: toplam slayt sayısı
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const sliderWrapper = document.querySelector('.slider-wrapper');
+            const slideWidth = document.querySelector('.slide').offsetWidth;
+            sliderWrapper.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+        }
+    </script>
+</body>
+</html>

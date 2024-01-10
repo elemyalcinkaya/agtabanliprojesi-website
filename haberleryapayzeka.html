@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uzay Bilgileri</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        body {
+            color: #e5dddd;
+            margin: 20px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-header {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #000;
+        }
+
+        .container {
+            width: 100%;
+            background-color: #131418;
+            padding: 7px;
+            box-sizing: border-box;
+            margin-top: -15px;
+            position: relative;
+            top: auto;
+            z-index: 100;
+        }
+        .basliklar {
+            width: 46%; 
+            margin: 0 auto; 
+            font-size: larger;
+            color: #131418;
+            margin-top: 10px;
+            font-family: Didot, serif;
+        }
+
+        h1 {
+            color: #e4ddb7;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+        }
+
+        p {
+            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul#main li {
+            float: left;
+            position: relative;
+            width: 120px;
+            margin-right: 30px;
+        }
+
+        ul#main li ul {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            top: 40px;
+            animation: slideDown 0.5s forwards;
+        }
+
+        @keyframes slideDown {
+            to {
+                display: block;
+                opacity: 1;
+            }
+        }
+
+        ul#main li:hover ul {
+            display: block;
+        }
+
+        ul li a {
+            display: block;
+            width: 90px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #101112;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .haber, .haber2 {
+            width: 100%;
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .haber img, .haber2 img {
+            width: 400px;
+            height: 350px;
+            margin-right: 20px;
+            margin-left: 50px;
+            align-self: center;
+            border: 4px solid #2e7390;
+        }
+
+        .haber-aciklama, .haber2-aciklama {
+            font-size: large;
+            text-align: left;
+            margin-top: 35px;
+            flex: 1;
+        }
+
+        .haber2 {
+            flex-direction: row-reverse;
+        }
+
+        h3 {
+            margin-bottom: 5px;
+            color: bisque;
+            font-size: xx-large;
+        }
+        .son-div {
+            width: 90%;
+            height: 200px;
+            background-color: rgb(2, 2, 40);
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .son-div p {
+            color: #e4ddb7;
+            font-size: x-large;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 45px;
+            margin-bottom: 10px;
+        }
+
+        .son-div button {
+            font-size: x-large;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #290533;
+            color: #e5dddd;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .son-div button:hover {
+            background-color: #9a4cd2;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="basliklar">
+            <a href="mywebsite.html" style="position: absolute; left: 310px; top: 10px;">
+                <img src="c:/Users/ELEM/Downloads/70b0972e7a9558baa4416c61b04da9.webp" alt="Görsel Başlık" style="width: 7%; max-width: 7%;">
+            </a>
+            
+            <ul id="main">
+                <li><a href="#">UZAY▿</a>
+                    <ul>
+                        <li><a href="hakkındauzay.html">-Hakkında</a></li>
+                        <li><a href="haberleruzay.html">-Haberler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">YAZILIM▿</a>
+                    <ul>
+                        <li><a href="yazılımhakkında.html">-Nedir?</a></li>
+                        <li><a href="haberleryazılım.html">Gelişmeler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">YAPAY&nbsp;ZEKA▿</a>
+                    <ul>
+                        <li><a href="hakkındayapayzeka.html">-Hakkında</a></li>
+                        <li><a href="haberleryapayzeka.html">-Yenilikler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEDİUM▿</a>
+                    <ul>
+                        <li><a href="mediumhakkında.html">-Nedir?</a></li>
+                        <li><a href="yazılarımmedium.html">-Yazılarım</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="haber">
+        <img src="c:/Users/ELEM/Downloads/luca-bravo-XJXWbfSo2f0-unsplash.jpg" alt="Haber 1">
+        <div class="haber-aciklama">
+            <h3>AB Dünyanın İlk ‘Yapay Zeka Yasası’nı Kabul Etti:</h3>
+            <p>Avrupa Birliği (AB) Komisyonu, Avrupa Parlamentosu ve üye ülkeler, dünyadaki ilk “Yapay Zeka Yasası” konusunda anlaşmaya vardı.
+                Yeni yasa ile yüz tanıma amaçlı veri tabanı oluşturan bütün sistemler yasaklanıyor.
+            </p>
+            
+            <p>Su, enerji, yargı, sağlık ve biyometri gibi alanları yönetmek için kullanılan yapay zeka sistemleri "yüksek risk" kapsamına alınarak, çok daha katı kurallar getiriyor.
+                AB Komisyonu’nun iç pazardan sorumlu üyesi Thierry Breton, Cuma gecesi sosyal medya platformu X üzerinden yaptığı açıklamada, taraflar arasında üç gündür devam eden müzakerelerin olumlu sonuçlandığını bildirdi.
+                Yapay Zeka Yasası’nın, "temel haklara ve demokrasiye saygı gösterdiği, aynı zamanda işletmelerin gelişmesine ve büyümesine izin verdiği" konusunda anlaşma sağlandı.</p>
+        </div>
+    </div>
+    
+    
+    <div class="haber2">
+        <img src="c:/Users/ELEM/Downloads/Sam-Altman-OpenAI-Return-Business-1258197415.webp" alt="Haber 2">
+        <div class="haber2-aciklama">
+            <h3> OpenAI'ın Kurucusu Sam Altman Görevden Alındı ve Birkaç Gün Sonra Geri Döndü! </h3>
+            <p>Yapay Zeka Şirketi OpenAI'ın kurucu ortağı ve CEO'su Sam Altman, şirketin yönetim kurulu tarafından "iletişimlerinde tutarlı bir şekilde dürüst olmamakla" suçlanarak Cuma günü görevden alındı.
+
+                Altman'dan birkaç dakika sonra şirketin diğer kurucu ortağı Greg Brockman da yönetim kurulundan alındı ve daha sonra şirketteki görevinden istifa etti.
+                <br>
+                
+                <br> Ardından Jakub Pachocki, Aleksander Mądry ve Szymon Sidor adlı üç kıdemli araştırmacı da görevlerinden ayrılma kararı aldı.
+                <br>Ancak birkaç çalkantılı gün sonunda, kendisini kovanları kovdurarak işine geri geri döndü. Olayların arkaplanı henüz net olmasa da çok merak uyandırıcı.
+            </p>
+        </div>
+    </div>
+    <div class="haber">
+        <img src="c:/Users/ELEM/Downloads/elon-musk-reuters-1815024.webp" alt="Haber 3">
+        <div class="haber-aciklama">
+            <h3>Elon Musk: Yapay Zeka Gelecekte Korkutucu Olabilir!</h3>
+            <p>Daha önce Twitter olarak bilinen X platformu, Tesla ve Space X şirketlerinin sahibi milyarder iş insanı Elon Musk, “çevreci hareketlerin” programlaması durumunda yapay zekanın insanlığın yok olmasına neden olabileceği uyarısında bulundu.
+                <br>
+                Joe Rogan’ın podcastında konuşan Musk, bazı kişilerin teknolojiyi, gezegeni korumak için insanlığa son vermekte kullanabileceğini söyledi.
+
+                Musk bu açıklamayı İngiltere’de düzenlenecek yapay zeka zirvesi öncesi yaptı.
+
+                Ancak birçok uzman ve ben bu tür uyarıların aşırı olduğu görüşünde.
+                <br>Musk “İnsanları kötü olduğunu düşünmeye başlarsanız, sonra varacağınız doğal sonuç ölmeleri gerektiği. Yapay zeka yok oluşçularca programlanırsa, başlıca fonksiyonu insanlığın yok oluşu olacak ve bunun kötü olduğunu bile düşünmeyecekler” dedi.
+
+                Musk’ın yapay zekanın tehditlerine dair yorumlarına katılan çok az kişi olsa da, birçok insan potansiyel tehlikeleri konusunda hemfikir.
+            </p>
+        </div>
+    </div>
+    <div class="son-div">
+        <p>Peki, sence yapay zeka gelecekte insanı yok edecek mi? Cevabına uygun distopyayı ya da ütopyayı görmek için cevabına tıkla!</p>
+        
+        <div>
+            <button onclick="redirectToPage('yes')">Evet</button>
+            <button onclick="redirectToPage('no')">Hayır</button>
+        </div>
+    </div>
+</body>
+<script>
+     function redirectToPage(answer) {
+            if (answer === 'yes') {
+                window.location.href = 'evet.html'; 
+            } else if (answer === 'no') {
+                window.location.href = 'hayır.html'; 
+            }
+        }
+</script>
+</html>

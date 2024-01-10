@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uzay Bilgileri</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        body {
+            color: #e5dddd;
+            margin: 20px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-header {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #000;
+        }
+
+        .container {
+            width: 100%;
+            background-color: #131418;
+            padding: 7px;
+            box-sizing: border-box;
+            margin-top: -15px;
+            position: relative;
+            top: auto;
+            z-index: 100;
+        }
+        .basliklar {
+            width: 46%; 
+            margin: 0 auto; 
+            font-size: larger;
+            color: #131418;
+            margin-top: 10px;
+            font-family: Didot, serif;
+        }
+
+        h1 {
+            color: #e4ddb7;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+        }
+
+        p {
+            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul#main li {
+            float: left;
+            position: relative;
+            width: 120px;
+            margin-right: 30px;
+        }
+
+        ul#main li ul {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            top: 40px;
+            animation: slideDown 0.5s forwards;
+        }
+
+        @keyframes slideDown {
+            to {
+                display: block;
+                opacity: 1;
+            }
+        }
+
+        ul#main li:hover ul {
+            display: block;
+        }
+
+        ul li a {
+            display: block;
+            width: 90px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #101112;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .haber, .haber2 {
+            width: 100%;
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .haber img, .haber2 img {
+            width: 400px;
+            height: 350px;
+            margin-right: 20px;
+            margin-left: 50px;
+            align-self: center;
+            border: 4px solid #4d0f04;
+        }
+        .haber-baslik {
+            color: #e4ddb7; 
+        }
+
+
+        .haber-aciklama, .haber2-aciklama {
+            font-size: large;
+            text-align: left;
+            margin-top: 35px;
+            flex: 1;
+        }
+        .haber2-aciklama {
+            font-size: large;
+            text-align: left;
+            margin-top: 35px;
+            margin-left: 50px;
+            flex: 1;
+        }
+
+        .haber2 {
+            flex-direction: row-reverse;
+        }
+
+        h3 {
+            margin-bottom: 5px;
+            color: bisque;
+            font-size: xx-large;
+        }
+        .bize-ulasin {
+            text-align: center;
+            color: #ebe4e4;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin: 20px;
+            font-family: Didot, serif;
+        }
+
+        .bize-ulasin form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Didot, serif;
+        }
+
+        .bize-ulasin label {
+            margin-bottom: 10px;
+            color: #f1f1f1; 
+            font-family: Didot, serif;
+        }
+
+        .bize-ulasin input,
+        .bize-ulasin textarea {
+            width: 70%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            font-family: Didot, serif;
+        }
+
+        .bize-ulasin input[type="submit"] {
+            background-color: #380312;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-family: Didot, serif;
+        }
+
+        .bize-ulasin input[type="submit"]:hover {
+            background-color: #000;
+            font-family: Didot, serif;
+        }
+
+        
+        @keyframes formFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bize-ulasin form {
+            animation: formFadeIn 1s ease-out;
+        }
+
+        
+        .bize-ulasin input[type="submit"]:hover {
+            background-color: #000;
+            transform: scale(1.05); 
+        }
+
+       
+        .son-div {
+            width: 100%;
+            max-height: 600px;
+            margin-top: 30px;
+            background-color: rgb(46, 5, 67);
+            overflow: hidden;
+            position: relative;
+        }
+        @keyframes shortenDiv {
+            from {
+                height: 1000px;
+            }
+            to {
+                height: 600px;
+            }
+        }
+
+        .son-div:hover {
+            animation: shortenDiv 0.5s ease-out;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="basliklar">
+            <a href="mywebsite.html" style="position: absolute; left: 310px; top: 10px;">
+                <img src="c:/Users/ELEM/Downloads/70b0972e7a9558baa4416c61b04da9.webp" alt="Görsel Başlık" style="width: 7%; max-width: 7%;">
+            </a>
+            
+            <ul id="main">
+                <li><a href="#">UZAY▿</a>
+                    <ul>
+                        <li><a href="hakkındauzay.html">-Hakkında</a></li>
+                        <li><a href="haberleruzay.html">-Haberler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">YAZILIM▿</a>
+                    <ul>
+                        <li><a href="yazılımhakkında.html">-Nedir?</a></li>
+                        <li><a href="haberleryazılım.html">Gelişmeler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">YAPAY&nbsp;ZEKA▿</a>
+                    <ul>
+                        <li><a href="hakkındayapayzeka.html">-Hakkında</a></li>
+                        <li><a href="haberleryapayzeka.html">-Yenilikler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MEDİUM▿</a>
+                    <ul>
+                        <li><a href="mediumhakkında.html">-Nedir?</a></li>
+                        <li><a href="yazılarımmedium.html">-Yazılarım</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="haber">
+        <img src="c:/Users/ELEM/Downloads/1_k5SPpnwkVNeVwiKscfoDHg.webp" alt="Haber 1">
+        <div class="haber-aciklama">
+            <h3><a href="https://medium.com/tech-sheet/yaz%C4%B1l%C4%B1mda-high-level-ve-low-level-a%C3%A7%C4%B1kl%C4%B1yoruz-95fef09107de" class="haber-baslik">Yazılımda High Level ve Low Level</a></h3>
+            <p>26 Kasım 2022 tarihinde editör arkadaşım Adem Efe Devrez ile "Yazılımda High Level ve Low Level" adlı bir yazı yazdık. Ve bu yazınız şu anda başkan yardımcılığını yürüttüğüm Ankara Üniversitesi Bilgisayar Topluluğu (Ankara University Computer Society) Medium hesabında yani TechSheet'te paylaşıldı. 
+            </p>
+            
+            <p>Yazılımdaki yüksek seviye ve düşük seviye dilleri anlattığımız bu yazı bilgilendirici ve oldukça faydalıydı.</p>
+        </div>
+    </div>
+    
+   
+    <div class="haber2">
+        <img src="c:/Users/ELEM/Downloads/1_LvmpA_Jg1COeQCXD6ZpGvw (1).webp" alt="Haber 2">
+        <div class="haber2-aciklama">
+            <h3><a href="https://medium.com/tech-sheet/i%CC%87nsanl%C4%B1%C4%9F%C4%B1n-evrendeki-g%C3%B6z%C3%BC-6b616c849533" class="haber-baslik">İnsanlığın Evrendeki Gözü</a></h3>
+            <p>3 Ocak 2024'te yazdığım "İnsanlığın Evrendeki Gözü" adlı yazın ise James Webb Uzay Teleskobu'nu anlatan ve onun hem dünyadaki hem de uzaydaki maceralarına odaklanan bir yazı. Yaptığı yeni keşiflerinden de bahsettiğim bu yazı oldukça bilgilendirici.
+                
+                <br> Uzaya olan ilgim onu araştırdıkça ve bildiklerimi diğer insanlarla paylaştıkça daha çok artıyor.
+            </p>
+        </div>
+    </div>
+    <div class="haber">
+        <img src="c:/Users/ELEM/Downloads/0_zLpxLrYeCjqdetbW (1).webp" alt="Haber 3">
+        <div class="haber-aciklama">
+            <h3><a href="https://medium.com/tech-sheet/twitterda-neler-oluyor-3eb6ee1dfb50" class="haber-baslik">Twitter’da Neler Oluyor?</a></h3>
+            <p>26 Aralık 2022 tarihinde yazdığım gündemle ilgili olan Twitter'da Neler Oluyor?"" adlı yazım, o zamanlar Twitter dünyasında çok ses getiren ve Twitter'ı satın alan Elon musk'ın hamleleri ile ilgiliydi.
+                <br> Bu yazıyı yazdığımda da belirttiğim gibi Twitter'ın yeni isminin X olacağı tartışılıyordu. Üstünden bir sene geçti ve şu an Twitter tarihi gömüldü ve yerini X'e bıraktı.
+
+
+            </p>
+        </div>
+    </div>
+    <div class="haber2">
+        <img src="c:/Users/ELEM/Downloads/channels4_profile.jpg" alt="Haber 4">
+        <div class="haber2-aciklama">
+            <h3><a href="https://medium.com/@elemyalcinkaya/benim-g%C3%B6z%C3%BCmden-yetgen-k%C3%BClt%C3%BCr%C3%BC-a7bb40a4db29" class="haber-baslik">Benim Gözümden YetGen Kültürü</a></h3>
+            <p>26 Nisan 2023 tarihinde yazdığım "Benim Gözümden YetGen Kültürü" adlı yazım, YetGen'de staj yaptığım dönemde kaleme aldığım bir yazı. YetGen'in iç dünyası ve orada edindiğim arkadaşlıklar hayatımda çok güzel bir yere sahipti.
+                <br> 9 haftalık staj deneyimimde çok farklı yetkinlikler kazanıp kendimi geliştirmiştim. YetGen liderlerine ve ekibine biraz daha yakından baktığımız bu yazıyı yazarken çok keyif almıştım. Bunları anlatmak için bu yazımı kaleme aldım.
+
+            </p>
+        </div>
+    </div>
+    <div class="haber">
+        <img src="c:/Users/ELEM/Downloads/0_BGsRJGySqxSSX2qY (1).gif" alt="Haber 5">
+        <div class="haber-aciklama">
+            <h3><a href="https://medium.com/tech-sheet/marsta-i%CC%87ki-k%C3%A2%C5%9Fif-79c89969360f" class="haber-baslik">Mars’ta İki Kâşif</a></h3>
+            <p>2 Mart 2023 tarihinde yazdığım "Mars’ta İki Kâşif" adlı yazımda ise Mars'ta hala görevini sürdüren Ingenuity adlı Mars Helikopteri'ni ve Perseverance adlı Mars Roverı'nı anlatıyorum. Oldukça uzun süren yapımları ve uzaya fırlatılma hikayesi bence çok anlamlı.
+                <br>Kâşiflerimizin önce dünyadaki üretimlerinden ve sonra da Mars'taki maceralarından bahsettiğim bu yazım okuyucular tarafından çok beğenildi.
+            </p>
+        </div>
+    </div>
+    <div class="haber2">
+        <img src="c:/Users/ELEM/Pictures/Screenshots/Ekran görüntüsü 2024-01-06 223025.png" alt="Haber 6">
+        <div class="haber2-aciklama">
+            <h3><a href="https://medium.com/tech-sheet/techsheete-nas%C4%B1l-yaz%C4%B1-atabilirim-2f39c669914a" class="haber-baslik">TechSheet’e Nasıl Yazı Atabilirim?</a></h3>
+            <p>29 Eylül 2023'te ise "TechSheet’e Nasıl Yazı Atabilirim?" adlı yazım, editörlüğünü yürüttüğüm AUCS Medium yayınımıza yazı atmak isteyen üyelerimizin nasıl atacağını açıklıyordu. 
+                <br>Bu dergide editör olarak çalışmak ve yıllar sonra derginin yeniden faaliyetine başlamasında yardımcı olmak beni çok mutlu ediyor.
+
+            </p>
+        </div>
+    </div>
+    <div class="son-div">
+        <div class="bize-ulasin">
+            <h2>Eğer Sen de Medium'da Hatta TechSheet'te Yazmak İstersen Benimle İletişime Geç!</h2>
+            <form action="#" method="post">
+                <label for="adSoyad">Ad Soyad:</label>
+                <input type="text" id="adSoyad" name="adSoyad" required>
+                <label for="adSoyad">Sana Ulaşabileceğim Mail Adresi:</label>
+                <input type="text" id="adSoyad" name="adSoyad" required>
+
+                <label for="oneri">Yazmak İstediğin Konu ve Merak Ettiklerin:</label>
+                <textarea id="oneri" name="oneri" rows="4" required></textarea>
+
+                <input type="submit" value="Gönder">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
